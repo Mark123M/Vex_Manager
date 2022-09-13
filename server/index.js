@@ -16,6 +16,10 @@ const helmet = require("helmet")
 const morgan = require("morgan")
 const path = require('path');
 
+// ADD THIS
+var cors = require('cors');
+app.use(cors());
+
 
 const postRoute = require('./routes/posts')
 const authRoute = require('./routes/auth')
