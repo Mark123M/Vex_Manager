@@ -13,7 +13,11 @@ import axios from 'axios'
 const Scene = () => {
   const ref = useRef()
   const materials = useLoader(MTLLoader, "Clawbot.mtl");
+<<<<<<< HEAD
   const obj = useLoader(OBJLoader, "https://mark123-uploads.s3.ca-central-1.amazonaws.com/1663360794096.obj", (loader) => {
+=======
+  const obj = useLoader(OBJLoader, "https://mark123-uploads.s3.ca-central-1.amazonaws.com/1663032273930.obj", (loader) => {
+>>>>>>> 1504c1f3f0fc8482aee8d2ea3f7a6d6fc57bba6d
     materials.preload();
     loader.setMaterials(materials);
   });

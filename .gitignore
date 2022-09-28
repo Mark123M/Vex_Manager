@@ -1,9 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+<<<<<<< HEAD
 public/parts
 server/uploads
 server/node_modules
 
+=======
+>>>>>>> 1504c1f3f0fc8482aee8d2ea3f7a6d6fc57bba6d
 # dependencies
 /node_modules
 /.pnp
