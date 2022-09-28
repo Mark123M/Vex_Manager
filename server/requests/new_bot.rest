@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "userId": "urmom",
+    "name": "square-bot",
+    "description": "this is squarebot from gAY Jackson "
+}
+
