@@ -1,5 +1,6 @@
 const router = require("express").Router()
 const Bot = require("../models/Bot")
+const Project = require("../models/Project")
 
 const multer  = require('multer')
 const path = require('path')
@@ -29,15 +30,24 @@ router.get('/', async(req, res)=>{
     readStream.pipe(res)
 }) */
 
-router.post('/', async(req, res)=>{
-    const newBot = new Bot(req.body)
-    try{
-      const savedBot = await newBot.save()
-      res.status(200).json(savedBot)
-    }
-    catch (err){
-      res.status(500).json(err)
-    }
+router.post('/', async (req, res)=>{
+  const newBot = new Bot(req.body)
+  try{
+    const savedBot = await newBot.save()
+    res.status(200).json(savedBot)
+  } catch (err){
+    res.status(500).json(err)
+  }
+})
+
+router.post('/project', async(req, res)=>{
+  const newProject = new Project(req.body)
+  try{
+    const savedProject = await newProject.save()
+    res.status(200).json(savedProject)
+  } catch (err){
+    res.status(500).json(err)
+  }
 })
 
 router.post('/model', upload.single('model'), async(req, res)=>{

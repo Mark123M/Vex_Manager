@@ -31,7 +31,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 function Model() {
   const ref = useRef()
-  const gltf = useLoader(GLTFLoader, '/bot2.glb')
+  const gltf = useLoader(GLTFLoader, '/parts/bot2.glb')
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime()

@@ -2,26 +2,19 @@ const mongoose = require("mongoose")
 
 //have multiple channels like "announcements", "discussion and feedback", (must post audio), and "submission/vote"
 const botSchema = new mongoose.Schema({
-    userId:{
-        type:String,
-        required:true
-    },
     name: {
         type: String,
         max: 100,
 	    required: true
     },
-    description:{
+    changeLog:{
         type:String,
-        max:5000
-    },
-    project:{
-        type:String,
-        unique: true
+        max:5000,
+        default: ""
     },
     model:{
         type:String,
-        default:null
+        default:""
     },
     partsCount:{
         type:Array,

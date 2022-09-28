@@ -1,0 +1,11 @@
+POST http://localhost:3001/api/posts/project HTTP/1.1
+content-type: application/json
+
+{
+    "userId": "urmom",
+    "name": "competition bot",
+    "description": "This bot was built for the Tower Takeover challenge. It took 3 months to design and build.",
+    "image": "penis.png",
+    "botIds": ["square chassis","square v1", "square v2"]
+}
+
