@@ -8,6 +8,7 @@ import Robot from "./components/models/Robot"
 import Home from "./pages/Home"
 import Upload from "./pages/Upload";
 import Projects from "./pages/Projects"
+import Robots from "./pages/Robots";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 //doing this for commits
 
@@ -29,7 +30,8 @@ function App() {
         <ColorModeSwitcher/>
         <HashRouter>
           <Routes>
-            <Route path="/" element = {<Home />}></Route>
+            <Route path="/" element = {<Projects />}></Route>
+            <Route path = "/robots" element = {<Robots/>}></Route>
             <Route path="/gear" element = {<Gear />}></Route>
             <Route path="/robot" element = {<Robot />}></Route>
             <Route path="/projects" element = {<Projects />}></Route>
