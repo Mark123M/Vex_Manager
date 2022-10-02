@@ -50,6 +50,16 @@ router.post('/project', async(req, res)=>{
   }
 })
 
+router.delete('/project/:id', async(req, res)=>{
+  try{
+    const project = await Project.findByIdAndRemove(req.params.id)
+    res.status(200).json("post deleted.")
+  } catch (err){
+    res.status(500).json(err)
+  }
+})
+
+
 router.get('/project', async(req, res)=>{
   try{
     const allProjects = await Project.find({})

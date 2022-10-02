@@ -21,6 +21,7 @@ export default function Projects() {
 
   const{value: user, setValue: setUser} = useContext(UserContext)
   const [modalDisplay, setModalDisplay] = useState(false)
+  const [reload, setReload] = useState(true)
 
   useEffect(()=>{
     const getAllProjects = async() =>{
@@ -29,12 +30,13 @@ export default function Projects() {
         setProjects(res.data)
     }
     getAllProjects()
-  }, [modalDisplay])
+  }, [modalDisplay, reload])
 
  
  
   return (
     <Flex flexDir= 'column'>
+    
         <Flex display = {modalDisplay? 'flex':'none'}>
           <ProjectModal setModalDisplay={setModalDisplay}/>
         </Flex>
@@ -49,7 +51,7 @@ export default function Projects() {
         
         <Wrap spacing = "15px" mt={10} justify = "center" >
           {projects.map((p)=>( //mapping the data of each post into a Post component
-            <ProjectCard key = {p._id} project = {p} />
+            <ProjectCard key = {p._id} project = {p} setReload = {setReload} reload = {reload}/>
           ))} 
         </Wrap>
         
