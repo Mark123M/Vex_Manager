@@ -9,42 +9,29 @@ import {
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar"
 import ProjectCard from "../components/ProjectCard";
-//import ProjectModal from "../components/ProjectModal";
+import ProjectModal from "../components/ProjectModal";
 
 import { UserContext } from "../UserContext";
+import axios from 'axios'
 
-
-function ProjectModal({project, setModalDisplay}) {
-
-  return(
-      <Flex 
-          flexDirection = 'column' 
-          w = '100%' 
-          h = '100%' 
-          position = 'fixed' 
-          bg = 'rgba(0, 0, 0, 0.5)' 
-          zIndex='10' 
-          justifyContent='center' 
-          alignItems = 'center'
-      >
-          <Flex borderRadius = '10px' bg = '#EFEFEF' w = '800px' h = '600px'>
-              <CloseButton onClick={()=>setModalDisplay(false)} size = 'lg' ml = 'auto' mt = {2} mr = {2}  variant = 'link'></CloseButton>
-          </Flex>
-          
-      </Flex> 
-      
-
-  )
-}
 
 export default function Projects() { 
-  
+  const [projects, setProjects] = useState([''])
+    
+
   const{value: user, setValue: setUser} = useContext(UserContext)
   const [modalDisplay, setModalDisplay] = useState(false)
 
   useEffect(()=>{
-    //redirect to login if they dont have user
-  })
+    const getAllProjects = async() =>{
+        const res = await axios.get('http://localhost:3001/api/posts/project')
+        console.log(res.data)
+        setProjects(res.data)
+    }
+    getAllProjects()
+  }, [modalDisplay])
+
+ 
  
   return (
     <Flex flexDir= 'column'>
@@ -60,12 +47,10 @@ export default function Projects() {
           <Button mt = '100px' colorScheme = 'red' ml = '40px' mr = '100px' onClick={()=>setModalDisplay(true)} >+ new project</Button>
         </Flex>
         
-        <Wrap spacing = "15px" mt={10} justify = "center">
-          <ProjectCard/>
-          <ProjectCard/>
-          <ProjectCard/>
-          <ProjectCard/>
-          <ProjectCard/>
+        <Wrap spacing = "15px" mt={10} justify = "center" >
+          {projects.map((p)=>( //mapping the data of each post into a Post component
+            <ProjectCard key = {p._id} project = {p} />
+          ))} 
         </Wrap>
         
 

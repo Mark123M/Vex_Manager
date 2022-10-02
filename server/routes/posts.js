@@ -50,6 +50,15 @@ router.post('/project', async(req, res)=>{
   }
 })
 
+router.get('/project', async(req, res)=>{
+  try{
+    const allProjects = await Project.find({})
+    res.status(200).json(allProjects)
+  } catch (err){
+    res.status(500)
+  }
+})
+
 router.post('/model', upload.single('model'), async(req, res)=>{
   // 
     const file = req.file
