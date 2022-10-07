@@ -16,13 +16,13 @@ const botSchema = new mongoose.Schema({
         type:String,
         default:""
     },
+    image:{
+        type: String,
+        default: ""
+    },
     partsCount:{
         type:Array,
         default: []
-    },
-    comments:{
-        type:Array,
-        default:[]
     }
 },
 {timestamps:true}

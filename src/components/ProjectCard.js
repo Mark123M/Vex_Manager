@@ -12,6 +12,7 @@ import '@fontsource/roboto'
 import '@fontsource/open-sans'
 import {GoKebabVertical} from 'react-icons/go'
 import {IoIosArrowDropdownCircle} from 'react-icons/io'
+import { useNavigate } from "react-router-dom";
 import ProjectModal from "./ProjectModal";
 
 import { UserContext } from "../UserContext";
@@ -40,7 +41,11 @@ export default function ProjectCard({project, setReload, reload}) {
     }
 
     return(
-        <Flex flexDirection = 'column'>
+        <Flex 
+            flexDirection = 'column'
+            cursor='pointer'
+        
+        >
            
             <Flex borderRadius = '10px 10px 0px 0px' bg = '#EFEFEF' w = '330px' h = '220px' flexDirection = 'column'>
                 <Flex w = '100%'  mr = {2} mt = {3} ml = 'auto' >
@@ -55,7 +60,7 @@ export default function ProjectCard({project, setReload, reload}) {
                         onMouseEnter = {()=>setShowMenu(true)} 
                         onMouseLeave = {()=>setShowMenu(false)}
                     >
-                        Menu
+                        Actions
                     </Text>
                     <Icon mr = {2} color = 'blackAlpha.600' as = {IoIosArrowDropdownCircle} w = {5} h = {5} cursor = 'pointer' onMouseEnter = {()=>setShowMenu(true)} onMouseLeave = {()=>setShowMenu(false)} ></Icon> 
                 </Flex>

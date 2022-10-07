@@ -16,6 +16,12 @@ export default function Robots() {
     //redirect to login if they dont have user
   })
   const{value: user, setValue: setUser} = useContext(UserContext)
+
+  const robot = {
+    name: 'hello',
+    changeLog: 'sdifdjdijfd'
+  }
+
   return (
     <Flex flexDir= 'column'>
         <Navbar/>
@@ -27,11 +33,10 @@ export default function Robots() {
         </Flex>
         
         <Wrap spacing = "15px" mt={10} justify = "center">
-          <RobotCard/>
-          <RobotCard/>
-          <RobotCard/>
-          <RobotCard/>
-          <RobotCard/>
+          <RobotCard robot = {robot}/>
+          <RobotCard robot = {robot}/>
+          <RobotCard robot = {robot}/>
+          
         </Wrap>
         
 
