@@ -19,18 +19,14 @@ import '@fontsource/open-sans'
 import { UserContext } from "../UserContext";
 import axios from 'axios'
 
-export default function ProjectModal({project, setModalDisplay}) {
+export default function ProjectModal({robot, setModalDisplay}) {
     const[name, setName] = useState("")
     const[desc, setDesc] = useState("")
     const[image, setImage] = useState('')
     const handleSubmit = async (e) =>{
         e.preventDefault()
-        const res = await axios.post('http://localhost:3001/api/posts/project', {
-            userId: "urmom",
-            name: name,
-            description: desc,
-            image: "penis.png",
-            robots: []
+        const res = await axios.post('http://localhost:3001/api/posts/project/robot', {
+            
         })
         setName('')
         setDesc('')

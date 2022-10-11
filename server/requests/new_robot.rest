@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/posts/project/6344dc04cb9b8b938a53066f HTTP/1.1
+content-type: application/json
+
+{
+    "botName": "NEW_PENIS_BOT",
+    "changeLog": "PENIS PENIS PENIS PENIS PENIS",
+    "model": "amazon.com/mybot.obj",
+    "botImage": "thumbnail.png",
+    "partsCount": {"gears": 5, "hexnuts": 6, "locknuts": 7}
+}
