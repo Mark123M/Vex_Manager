@@ -6,6 +6,21 @@ content-type: application/json
     "name": "competition bot",
     "description": "This bot was built for the Tower Takeover challenge. It took 3 months to design and build.",
     "image": "penis.png",
-    "botIds": ["square chassis","square v1", "square v2"]
+    "robots": [
+        {
+            "botName": "squarebot",
+            "changeLog": "fixed chassis, began working on claw",
+            "model": "amazon.com/mybot.obj",
+            "botImage": "thumbnail.png",
+            "partsCount": {"gears": 5, "hexnuts": 6, "locknuts": 7}
+        },
+        {
+            "botName": "squarebot2",
+            "changeLog": "fixed chassis, began working on claw",
+            "model": "amazon.com/mybot.obj",
+            "botImage": "thumbnail.png",
+            "partsCount": {"gears": 5, "hexnuts": 6, "locknuts": 7}
+        }
+    ]
 }
 

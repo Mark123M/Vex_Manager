@@ -17,7 +17,7 @@ const projectSchema = new mongoose.Schema({
     image: {
         type: String,
     },
-    botIds: {
+    robots: {
         type: Array,
         default:[]
     }

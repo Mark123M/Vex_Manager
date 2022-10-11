@@ -30,7 +30,7 @@ export default function ProjectModal({project, setModalDisplay}) {
             name: name,
             description: desc,
             image: "penis.png",
-            botIds: ["square chassis","square v1", "square v2"]
+            robots: []
         })
         setName('')
         setDesc('')

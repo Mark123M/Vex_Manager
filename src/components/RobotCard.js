@@ -20,6 +20,7 @@ import axios from 'axios'
 
 export default function RobotCard({robot, setReload, reload}) {
     const[showMenu, setShowMenu] = useState(false)
+    const navigate = useNavigate()
 
     const handleEditBot = () =>{
 
@@ -44,7 +45,7 @@ export default function RobotCard({robot, setReload, reload}) {
         <Flex 
             flexDirection = 'column'
             cursor='pointer'
-        
+            onClick = {()=>navigate(`/project/robot/${robot.botName}`)}
         >
            
             <Flex borderRadius = '10px 10px 0px 0px' bg = '#EFEFEF' w = '330px' h = '220px' flexDirection = 'column'>
@@ -88,7 +89,7 @@ export default function RobotCard({robot, setReload, reload}) {
             </Flex>
 
             <Flex  bg = 'blue.400' w = '330px' h = '280px' flexDirection = 'column'>
-                <Text  fontWeight = '600' fontSize = '1.75rem' ml = {4} mt = {3} color = 'white' fontFamily={`"Roboto", sans-serif`}> {robot.name}</Text>  
+                <Text  fontWeight = '600' fontSize = '1.75rem' ml = {4} mt = {3} color = 'white' fontFamily={`"Roboto", sans-serif`}> {robot.botName}</Text>  
                 
                 <Text fontWeight = '300' fontSize = 'md' mr = {4} ml = {4} mt = {2} color = 'white' fontFamily={`"Open sans", sans-serif`}>
                     {robot.changeLog}

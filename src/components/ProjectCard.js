@@ -20,6 +20,7 @@ import axios from 'axios'
 
 export default function ProjectCard({project, setReload, reload}) {
     const[showMenu, setShowMenu] = useState(false)
+    const navigate = useNavigate()
 
     const handleEditProject = () =>{
 
@@ -34,7 +35,7 @@ export default function ProjectCard({project, setReload, reload}) {
             name: 'Copy of '+project.name,
             description: project.description,
             image: project.image,
-            botIds: project.botIds
+            robots: project.robots
         })
         setReload(!reload)
         
@@ -44,7 +45,7 @@ export default function ProjectCard({project, setReload, reload}) {
         <Flex 
             flexDirection = 'column'
             cursor='pointer'
-        
+            
         >
            
             <Flex borderRadius = '10px 10px 0px 0px' bg = '#EFEFEF' w = '330px' h = '220px' flexDirection = 'column'>

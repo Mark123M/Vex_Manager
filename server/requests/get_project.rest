@@ -1,0 +1,2 @@
+GET http://localhost:3001/api/posts/project/6344dd3fcb9b8b938a530684 HTTP/1.1
+content-type: application/json

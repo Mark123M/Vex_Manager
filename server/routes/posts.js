@@ -30,11 +30,30 @@ router.get('/', async(req, res)=>{
     readStream.pipe(res)
 }) */
 
-router.post('/', async (req, res)=>{
+/*router.post('/', async (req, res)=>{
   const newBot = new Bot(req.body)
   try{
     const savedBot = await newBot.save()
     res.status(200).json(savedBot)
+  } catch (err){
+    res.status(500).json(err)
+  }
+}) */
+
+
+router.get('/project', async(req, res)=>{
+  try{
+    const allProjects = await Project.find({})
+    res.status(200).json(allProjects)
+  } catch (err){
+    res.status(500).json(err)
+  }
+})
+
+router.get('/project/:id', async(req, res)=>{
+  try{
+    const project = await Project.findById(req.params.id)
+    res.status(200).json(project)
   } catch (err){
     res.status(500).json(err)
   }
@@ -59,16 +78,16 @@ router.delete('/project/:id', async(req, res)=>{
   }
 })
 
-
-router.get('/project', async(req, res)=>{
+/*
+router.get('/project/:id/robots', async(req, res)=>{
   try{
-    const allProjects = await Project.find({})
-    res.status(200).json(allProjects)
+    const project = await Project.findById(req.params.id)
+    const robots = await Bot.findById()
   } catch (err){
-    res.status(500)
+    res.status(500).json(err)
   }
 })
-
+*/
 router.post('/model', upload.single('model'), async(req, res)=>{
   // 
     const file = req.file

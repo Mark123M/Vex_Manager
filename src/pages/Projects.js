@@ -51,7 +51,7 @@ export default function Projects() {
         
         <Wrap spacing = "15px" mt={10} justify = "center" >
           {projects.map((p)=>( //mapping the data of each post into a Post component
-            <ProjectCard key = {p._id} project = {p} setReload = {setReload} reload = {reload}/>
+            <ProjectCard key = {p.name} project = {p} setReload = {setReload} reload = {reload}/>
           ))} 
         </Wrap>
         

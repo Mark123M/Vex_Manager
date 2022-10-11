@@ -9,6 +9,7 @@ import Home from "./pages/Home"
 import Upload from "./pages/Upload";
 import Projects from "./pages/Projects"
 import Robots from "./pages/Robots";
+import Editor from "./pages/Editor"
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 //doing this for commits
 
@@ -31,11 +32,17 @@ function App() {
         <HashRouter>
           <Routes>
             <Route path="/" element = {<Projects />}></Route>
+
             <Route path = "/robots" element = {<Robots/>}></Route>
-            <Route path="/gear" element = {<Gear />}></Route>
+            <Route path = "project/robot/:id" element = {<Editor/>}></Route>
+
+           
             <Route path="/project/:id" element = {<Robots />}></Route>
             <Route path="/projects" element = {<Projects />}></Route>
+
             <Route path="/upload" element = {<Upload />}></Route>
+            <Route path="/gear" element = {<Gear />}></Route>
+
           </Routes>
         </HashRouter>
       </ChakraProvider>
